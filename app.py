@@ -18,7 +18,7 @@ st.set_page_config(
     initial_sidebar_state = 'auto'
 )
 
-st.sidebar.image('logo.png')
+st.sidebar.image('image/logo.png')
 st.sidebar.title('Fraud Detection in Energy and Gas consumption')
 st.sidebar.write('---')
 
@@ -30,8 +30,8 @@ st.write('---')
 
 # Loads Dataset
 
-client_train = pd.read_csv('client_train.csv', encoding = 'ISO-8859-1')
-invoice_train = pd.read_csv('invoice_train.csv', encoding = 'ISO-8859-1')
+client_train = pd.read_csv('data/client_train.csv', encoding = 'ISO-8859-1')
+invoice_train = pd.read_csv('data/invoice_train.csv', encoding = 'ISO-8859-1')
 st.write('**Client Information**')
 st.write(client_train.head(20))
 st.write('---')
@@ -196,7 +196,7 @@ for col in drop_col:
 
 # to retrain
 agree = st.checkbox('Check to retrain the model')
-filename = 'final_model.sav'
+filename = 'model/final_model.sav'
 if agree:
     # Build  Model
     model = LGBMClassifier(boosting_type='gbdt',num_iteration=500)
