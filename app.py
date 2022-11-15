@@ -2,14 +2,11 @@ import pandas as pd
 import plotly.graph_objects  as go
 import plotly.express as px
 import pickle
-import requests
-from io import BytesIO
 from PIL import Image
 from lightgbm import LGBMClassifier
 import streamlit as st
 
-response = requests.get(url='https://katonic.ai/favicon.ico')
-im = Image.open(BytesIO(response.content))
+im = Image.open('image/favicon.ico')
 
 st.set_page_config(
     page_title='Fraud Detection in Energy and Gas consumption', 
