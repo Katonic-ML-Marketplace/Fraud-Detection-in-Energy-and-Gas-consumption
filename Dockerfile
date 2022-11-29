@@ -1,5 +1,7 @@
 FROM python:3.8.2-slim
 
+RUN mkdir -p data model image
+
 COPY app.py .
 COPY data/client_train.csv data/.
 COPY data/invoice_train.csv data/.
